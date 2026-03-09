@@ -1,0 +1,82 @@
+html{
+    scroll-behavior: smooth;
+}
+
+
+/* styles the name in the header */
+#name{
+  font-size: 1.2rem;
+  color: black;
+  margin: 0; /* removes extra space */
+  font-family: 'Roboto', sans-serif;
+}
+
+
+/* hover effect for name in header */
+#name:hover{
+  background-color: pink;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0.5rem;
+}
+
+/* styles the top header containing name and nav */
+.top-header{
+  color: white;
+  background-color: #89CFF0;
+  display: flex;
+  flex-direction: row; /* aligns items in a row */
+  justify-content: space-between; /* pushes name to left, nav to right */
+  align-items: center;
+  padding: 10px 20px;
+  position: sticky; 
+  top: 0;
+  z-index: 1000;
+  flex-wrap: wrap;
+  box-shadow: 10px 10px 20px rgba(0,0,0,0.1);
+  /* border-bottom: 1px solid #000;  optional separator */
+  transition: all 0.3s ease;
+  opacity: 1;
+  backdrop-filter: none; /* default: no blur */
+}
+
+
+
+/* moves nav to the right */
+nav{
+    text-align: right;
+}
+
+/* targets all the links in nav */
+nav a{
+  text-decoration: none;
+  color: black;
+  margin: 10px;
+  white-space: nowrap; /*keeps them on one line */
+}
+
+
+/*selects all the <a> tags that are descendents of the <nav> element */
+nav a:hover{
+  padding: 0.5rem 0.5rem;
+  background-color: pink;
+  transition: all 0.3s ease;
+  flex-wrap: nowrap;
+  white-space: nowrap; /* forces all links to stay on 1 line */
+}
+
+#explore{
+    text-align: center; 
+    margin: 3rem 0 1rem;
+}
+
+
+/* styles the profile image in the page header */
+.page-header img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid black;
+    margin-top: 30px;
+    box-shadow: 0 8px 20px rgba(0, 48, 143, 0.3);
+}
