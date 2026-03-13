@@ -1,82 +1,238 @@
+
+/* Portfolio */
+
+/* Importing the Poppins font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+
+/* Remove padding and margin, so only padding and margin I have specifically put will show */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Set the default font for the entire body to Poppins; see imported google fonts */
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+
 html{
     scroll-behavior: smooth;
 }
 
+p{
+    color: rgb(85, 85, 85);
 
-/* styles the name in the header */
-#name{
-  font-size: 1.2rem;
-  color: black;
-  margin: 0; /* removes extra space */
-  font-family: 'Roboto', sans-serif;
+}
+
+/*Transition */
+
+a, .btn{
+    transition: all 300ms ease; 
 }
 
 
-/* hover effect for name in header */
-#name:hover{
-  background-color: pink;
-  transition: all 0.3s ease;
-  padding: 0.5rem 0.5rem;
+/*desktop navigation bar*/
+
+nav, .nav-links{
+    display: flex;
 }
 
-/* styles the top header containing name and nav */
-.top-header{
-  color: white;
-  background-color: #89CFF0;
-  display: flex;
-  flex-direction: row; /* aligns items in a row */
-  justify-content: space-between; /* pushes name to left, nav to right */
-  align-items: center;
-  padding: 10px 20px;
-  position: sticky; 
-  top: 0;
-  z-index: 1000;
-  flex-wrap: wrap;
-  box-shadow: 10px 10px 20px rgba(0,0,0,0.1);
-  /* border-bottom: 1px solid #000;  optional separator */
-  transition: all 0.3s ease;
-  opacity: 1;
-  backdrop-filter: none; /* default: no blur */
+nav {
+    justify-content: space-around;
+    align-items: center;
+    height: 17vh; /* 17% of the viewport height */
+}
+
+.nav-links{
+    gap: 2rem;
+    list-style: none;
+    font-size: 1.5rem;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+    text-decoration-color: white;
 }
 
 
-
-/* moves nav to the right */
-nav{
-    text-align: right;
+a:hover{
+    color: skyblue;
+    text-decoration: underline;
+    text-underline-offset: 1rem; /* Adjust the distance between the text and the underline */
+    text-decoration-color: rgb(135, 206, 235); /* Set the color of the underline */
 }
 
-/* targets all the links in nav */
-nav a{
-  text-decoration: none;
-  color: black;
-  margin: 10px;
-  white-space: nowrap; /*keeps them on one line */
+.logo{
+    font-size: 2rem;
+}
+
+.logo:hover{
+    cursor: default; 
+}
+
+/*Hamburger navigation menu*/
+
+#hamburger-nav {
+    display: none; /* Hidden by default, shown on smaller screens */
+}
+
+.hamburger-menu{
+    position: relative;
+    display: inline-block;
+}
+
+.hamburger-icon{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+    width: 30px;
+    cursor: pointer;
+}
+
+/* Style for the three lines of the hamburger icon */
+.hamburger-icon span{
+    width: 100%;
+    height: 2px;
+    background-color: skyblue;
+    transition: all 0.3s ease-in-out; 
 }
 
 
-/*selects all the <a> tags that are descendents of the <nav> element */
-nav a:hover{
-  padding: 0.5rem 0.5rem;
-  background-color: pink;
-  transition: all 0.3s ease;
-  flex-wrap: nowrap;
-  white-space: nowrap; /* forces all links to stay on 1 line */
-}
-
-#explore{
-    text-align: center; 
-    margin: 3rem 0 1rem;
+.menu-links{
+    position: absolute;
+    top: 100%;
+    right: 0%;
+    background-color: white;
+    width: fit-content;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
 }
 
 
-/* styles the profile image in the page header */
-.page-header img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid black;
-    margin-top: 30px;
-    box-shadow: 0 8px 20px rgba(0, 48, 143, 0.3);
+.menu-links a{
+    display: block;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: black;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-links li{
+    list-style: none; /* Remove bullet points from list items */
+}
+
+/* When the menu is open, set max-height to a large value to allow it to expand */
+.menu-links.open{
+    max-height: 300px;
+}
+
+
+.hamburger-icon.open span:first-child{
+    transform: rotate(45deg) translate(8px, 5px); /* Rotate the first line to form the top part of the "X" */
+}
+
+
+.hamburger-icon.open span:nth-child(2){
+    opacity: 0; /* Hide the middle line */
+}
+
+.hamburger-icon.open span:last-child{
+    transform: rotate(-45deg) translate(7px, -5px); /* Rotate the last line to form the bottom part of the "X" */
+}
+
+/* Conflicting code that was previously in the file, but I have removed it because it was causing issues with the hamburger menu functionality.
+.hamburger-icon span:first-child{
+    transform: none;
+}
+
+
+.hamburger-icon span:first-child{
+    opacity: 1; *Shows the middle line*
+}
+
+
+.hamburger-icon span:first-child{
+    transform: none;
+
+ */
+
+
+
+/* Sections */
+
+section{
+    padding-top: 4vh; /* Add padding to the top of each section to create space between the navigation bar and the content */
+    height: 96vh; /* Set the height of each section to 96% of the viewport height */
+    margin: 0 10rem;
+    box-sizing: border-box; /* Ensure padding and border are included in the total width and height */
+    min-height: fit-content; /* Allow sections to expand vertically if content exceeds the specified height and does not overlap each other */
+}
+
+
+.section-container{
+    display: flex;
+}
+
+
+/*Profile Section */
+
+#profile{
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    height: 80vh;
+}
+
+
+.section__pic_container{
+    display: flex;
+    height: 400px;
+    width: 400px;
+    margin: auto 0;
+}
+
+
+.section__text{
+    align-self: center;
+    text-align: center;
+}
+
+
+.section__text p{
+    font-weight: 600;
+}
+
+
+.section__text_p1{
+    text-align: center;
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+
+}
+
+.title{
+    font-size: 3rem;
+    text-align: center;
+}
+
+
+#socials-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+
+/*Icons*/
+.icon {
+    cursor: pointer;
+    height: 3rem;
 }
