@@ -1,16 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Oluwatise</title>
-     <meta name="description" content="personal website">
-    <meta name="keywords" content="personal website, projects, education, work experience, frontend developer, skills, developer, frontend, reviews">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Personal Website">
-    <meta name="author" content="Oluwatise">
-    <meta property="og:description" content="A single page HTML personal website">
-    <meta property="og:type" content="website">
     <link rel="stylesheet" href="portfolio.css"/>
     <link rel="stylesheet" href="mediaqueries.css"/>
 </head>
@@ -29,7 +23,7 @@
         </nav>
         <!-- Hamburger Menu for Mobile -->
         <nav id="hamburger-nav">
-            <div class="logo">Oluwatise</div>
+            <div class="logo">Olúwatiṣé</div>
             <div class="hamburger-menu">
                 <div class="hamburger-icon" onclick="toggleMenu()">
                     <span></span> <!-- Hamburger lines -->
@@ -50,8 +44,8 @@
             </div>
             <div class="section__text">
                 <p class="section__text_p1">Hello, I am</p>
-                <h1 class="text">Oluwatise</h1>
-                <p class="section__text_p2">Aspiring Frontend Developer</p>
+                <h1 class="text">Olúwatiṣé</h1>
+                <p class="section__text_p2">Aspiring Web Developer</p>
                 <div class="btn-container">
                     <button class="btn btn-color-2" onclick="window.open('./')">
                     Download CV
@@ -61,9 +55,7 @@
                         Contact Info
                     </button> <!-- Button to navigate to contact section of website-->
                 </div>
-                
-                 <p>Website is still in development.</p>
-                
+                <p id="web-in-progress">Website is still in development.</p>
                 <!-- Social media icons -->
                     <div id="socials-container">
                         <!-- LinkedIn -->
@@ -76,11 +68,37 @@
             </div>
         
         </section>
+        
+        <section id="about">
+    <p class="section__text__p1">Get To Know More</p>
+    <h1 class="title">About Me</h1>
+    <div class="section-container">
+        <!-- Left side: Profile Image -->
+        <div class="section__pic-container">
+            <img src="./assets/profile-pic.png" alt="Profile picture" class="about-pic"/>
+        </div>
+        
+        <!-- Right side: Experience & Education -->
+        <div class="about-details-container">
+            <div class="about-containers">
+                <div class="details-container">
+                    <img src="./assets/experience.png" alt="Experience icon" class="icon">
+                    <h3>Experience</h3>
+                    <p>2+ years<br/> Frontend development <br/> Currently learning web development </p>
+                </div>
+                <div class="details-container">
+                    <img src="./assets/education.png" alt="Education icon" class="icon">
+                    <h3>Education</h3>
+                    <p>Lorem.<br/>Lorem, ipsum dolor.</p>
+                </div>
+            </div>
+            <div class="text-container">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit neque praesentium libero veniam debitis non commodi sunt vel est suscipit.</p>
+            </div>
+        </div>
+    </div>
+    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'"/>
+</section>
         <script src="script.js"></script>
   </body>
 </html>
-
-
-
-
-
