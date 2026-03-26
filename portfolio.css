@@ -13,6 +13,21 @@
 /* Set the default font for the entire body to Poppins; see imported google fonts */
 body{
     font-family: 'Poppins', sans-serif;
+    background-color:  #f0f8ff;
+}
+
+#desktop-nav{
+    position: sticky;
+    top: 0;
+    z-index: 100; /* Ensures nav stays above other content */
+    background-color:  #f0f8ff; /* Add background color so that content doesn't show through*/
+}
+
+#hamburger-nav{
+    position: sticky;
+    top: 0;
+    z-index: 100; /* Ensures nav stays above other content */
+    background-color:  #f0f8ff; /* Add background color so that content doesn't show through*/
 }
 
 
@@ -175,10 +190,6 @@ section{
 }
 
 
-.section-container{
-    display: flex;
-}
-
 
 /*Profile Section */
 
@@ -201,6 +212,8 @@ section{
 .section__text{
     align-self: center;
     text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -286,12 +299,15 @@ section{
 /*About Section*/
 
 #about{
-    position: relative;
+     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     flex-direction: column;
+    min-height: 100vh;  /* Add this */
+    height: auto;       /* Change from fixed height */
+    padding-bottom: 4rem;  /* Add some bottom padding */
 }
 
 .about-containers{
@@ -312,7 +328,61 @@ section{
 
 .about-pic {
     border-radius: 2rem;
+    height: auto; /* Lets the height adjust automatically */
+    width: 100%;
+    object-fit: contain; /* Shows the entire image the without cropping */
+    border: 3px solid black;
 
+}
+
+
+/* Make the .about-pic responsive on different screens */
+
+/* Tablet screens */
+/* Tablet screens */
+@media screen and (max-width: 768px) {
+    .section-container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        height: auto;  /* Add this - allows proper centering */
+    }
+    
+    .section__pic-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        max-width: 300px;
+        width: 100%;
+        height: auto;  /* Add this */
+        min-height: 300px;  /* Add this - gives space for vertical centering */
+    }
+    
+    .about-pic {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        display: block;
+        margin: 0;  /* Remove any default margins */
+    }
+    
+    /* Ensure the about section allows centering */
+    #about {
+        padding: 2rem 1rem;
+        height: auto;
+        min-height: 100vh;
+        justify-content: center;
+    }
+}
+
+/* Mobile screens */
+@media screen and (max-width: 480px) {
+    .section__pic-container {
+        max-width: 250px;
+        min-height: 250px;  /* Adjust for smaller screens */
+    }
 }
 
 
@@ -321,6 +391,7 @@ section{
     position: absolute;
     right: -5rem;
     bottom: 2.5rem;
+    transition: all 0.3s ease-in-out;
 }
 
 
@@ -338,13 +409,19 @@ section{
 
 .section-container{
     gap: 4rem;
-    height: 80%;
+    height: auto;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
-.section__pic_container{
-    height:   400px;
-    width:   400px;
-    margin: auto 0;
+
+.section__pic-container{
+    display: flex;
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
 
 }
 
@@ -353,3 +430,105 @@ section{
     margin-top: 10px;
     color: skyblue;
 }
+
+
+/*Experience */
+#experience{
+    position: relative;
+}
+
+
+.experience-sub-title{
+    color: rgb(85, 85, 85);
+    font-weight: 600;
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+}
+
+
+.experience-details-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+
+.article-container{
+    display: flex;
+    text-align: initial;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Experience responsive at different screens */
+@media screen and (max-width: 550px) {
+    .article-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    article {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+
+
+/* Ensure both Web and Backend sections have the same article layout */
+.details-container .article-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+}
+
+
+
+article{
+    display: flex;
+    width: auto;
+    justify-content: flex-start;
+    gap: 0.5rem;
+}
+
+article .icon{
+    cursor: default;
+}
+
+
+
+/* Projects */
+#projects{
+    position: relative;
+}
+
+.color-container{
+    border-color: rgb(163, 163, 163);
+    background: rgb(250, 250 , 250);
+}
+
+.project-img{
+    border-radius: 2rem;
+    width: 90%;
+    height: 90%;
+}
+
+.project-title{
+    margin: 1rem;
+    color: black;
+}
+
+.project-btn{
+    color: black;
+    border-color: rgb(163, 163, 163);
+}
+
+
+
